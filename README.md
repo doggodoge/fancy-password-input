@@ -1,4 +1,4 @@
-# Fancy-password-input
+# Fancy Password Input
 
 <img width="849" alt="image" src="https://user-images.githubusercontent.com/8438991/193413194-e00d3b6d-b7bb-4442-9f78-9f737290aa2b.png">
 
