@@ -1,0 +1,37 @@
+{
+  "type": "component",
+  "metadata": {},
+  "schema": {
+    "name": "fancy-password-input",
+    "friendlyName": "fancy-password-input",
+    "description": "A kinda cool fancy password input",
+    "icon": "Text",
+    "settings": [
+      {
+        "type": "number",
+        "key": "greenThreshold",
+        "label": "Green threshold"
+      },
+      {
+        "type": "number",
+        "key": "max",
+        "label": "Max"
+      },
+      {
+        "type": "number",
+        "key": "thiccness",
+        "label": "Bar thiccness"
+      },
+      {
+        "type": "text",
+        "key": "poorMessage",
+        "label": "Poor message"
+      },
+      {
+        "type": "text",
+        "key": "goodMessage",
+        "label": "Good message"
+      }
+    ]
+  }
+}
