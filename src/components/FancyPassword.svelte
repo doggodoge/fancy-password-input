@@ -1,7 +1,7 @@
 <script>
     import ComplexityBar from "./ComplexityBar.svelte";
 
-    let secret = '';
+    export let secret = '';
 
     export let greenThreshold = 15;
     export let max = 30;

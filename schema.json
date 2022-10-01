@@ -8,6 +8,11 @@
     "icon": "Text",
     "settings": [
       {
+        "type": "field/string",
+        "key": "field",
+        "label": "Field"
+      },
+      {
         "type": "number",
         "key": "greenThreshold",
         "label": "Green threshold"
