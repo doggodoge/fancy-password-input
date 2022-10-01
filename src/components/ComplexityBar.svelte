@@ -14,7 +14,7 @@
         if (secret.length > greenThreshold) {
             color = 'green';
         }
-        width = `${clamp(secret.length, 0, max) / 30 * 100}%`
+        width = `${clamp(secret.length, 0, max) / max * 100}%`;
     }
 </script>
 

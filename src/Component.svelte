@@ -11,7 +11,7 @@
     export let max;
     export let poorMessage = '💩';
     export let goodMessage = '✅';
-    
+
     const {styleable} = getContext("sdk")
     const component = getContext("component")
     const formContext = getContext("form");
