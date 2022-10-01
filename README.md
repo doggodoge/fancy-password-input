@@ -1,5 +1,7 @@
 # Fancy-password-input
 
+<img width="849" alt="image" src="https://user-images.githubusercontent.com/8438991/193413194-e00d3b6d-b7bb-4442-9f78-9f737290aa2b.png">
+
 This budibase widget adds a new fancy password input with a wee progress bar thing
 that can be customized with a threshold, max length etc.
 
