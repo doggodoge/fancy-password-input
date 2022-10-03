@@ -1,50 +1,81 @@
 <script>
-    import ComplexityBar from "./ComplexityBar.svelte";
+  import ComplexityBar from './ComplexityBar.svelte';
 
-    export let secret = '';
+  export let secret = '';
+  export let label = '';
+  export let greenThreshold = 15;
+  export let max = 30;
+  export let poorMessage = '💩';
+  export let goodMessage = '✅';
 
-    export let greenThreshold = 15;
-    export let max = 30;
-    export let thiccness = 5;
-    export let poorMessage = '💩';
-    export let goodMessage = '✅';
+  $: notEmpty = secret.length > 0;
 </script>
 
 <div class="container">
-  <input type="password" class="password-input" bind:value={secret}>
-  <ComplexityBar {secret} {greenThreshold} {max} {thiccness}/>
+  <div class="input-container">
+    {#if label}
+      <div class="label">{label}</div>
+    {/if}
+    <input
+      type="password"
+      class="password-input {notEmpty && 'password-input-not-empty'}"
+      bind:value={secret} />
+  </div>
+
+  <ComplexityBar {secret} {greenThreshold} {max} thiccness={5} />
+
   <div class="error-message">
     {#if secret === ''}
+      <div />
     {:else if secret.length > greenThreshold}
-      <span style="color: green;">{goodMessage}</span>
+      <span style="color: var(--green);">{goodMessage}</span>
     {:else}
-      <span style="color: red;">{poorMessage}</span>
+      <span style="color: var(--red);">{poorMessage}</span>
     {/if}
   </div>
 </div>
 
 <style>
-    .container {
-        display: flex;
-        flex-direction: column;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-    }
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .password-input {
-        padding: 0.5rem;
-        font-size: x-large;
-        border-style: none;
-        outline: none;
-        transition: 100ms;
-    }
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
 
+  .label {
+    font-size: small;
+    color: var(--grey-7);
+  }
 
-    .password-input:focus {
-        box-shadow: 0.2em 0.2em 0 rgba(0, 0, 0, 0.1);
-    }
+  .password-input {
+    padding: 0.5rem;
+    font-size: x-large;
+    color: var(--grey-9);
+    border-style: none;
+    outline: none;
+    border-radius: 0.5em;
+    transition: 100ms;
+    border: var(--border-grey);
+  }
 
-    .error-message {
-        text-align: center;
-    }
+  .password-input-not-empty {
+    border-radius: 0;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+  }
+
+  .password-input:focus {
+    border-bottom: var(--border-blue);
+  }
+
+  .error-message {
+    text-align: center;
+    font-size: x-small;
+    padding-top: 0.5rem;
+  }
 </style>

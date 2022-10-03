@@ -3,5 +3,18 @@
   "singleQuote": true,
   "jsxSingleQuote": false,
   "arrowParens": "avoid",
-  "tabWidth": 2
+  "tabWidth": 2,
+  "printWidth": 80,
+  "overrides": [
+    {
+      "files": "*.svelte",
+      "options": {
+        "svelteBracketNewLine": false,
+        "svelteAllowShorthand": true,
+        "plugins": [
+          "prettier-plugin-svelte"
+        ]
+      }
+    }
+  ]
 }

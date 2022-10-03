@@ -13,6 +13,11 @@
         "label": "Field"
       },
       {
+        "type": "text",
+        "key": "label",
+        "label": "Label"
+      },
+      {
         "type": "number",
         "key": "greenThreshold",
         "label": "Green threshold"
@@ -21,11 +26,6 @@
         "type": "number",
         "key": "max",
         "label": "Max"
-      },
-      {
-        "type": "number",
-        "key": "thiccness",
-        "label": "Bar thiccness"
       },
       {
         "type": "text",

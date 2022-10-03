@@ -1,51 +1,67 @@
 <script>
-    import {getContext, onDestroy} from "svelte"
-    import FancyPassword from "./components/FancyPassword.svelte";
+  import { getContext, onDestroy } from 'svelte';
+  import FancyPassword from './components/FancyPassword.svelte';
 
-    let secret;
+  export let field;
+  export let label;
+  export let greenThreshold = 15;
+  export let max = 30;
+  export let poorMessage = '💩';
+  export let goodMessage = '✅';
 
-    export let field;
+  const { styleable } = getContext('sdk');
+  const component = getContext('component');
+  const formContext = getContext('form');
+  const formStepContext = getContext('form-step');
 
-    export let thiccness;
-    export let greenThreshold;
-    export let max;
-    export let poorMessage = '💩';
-    export let goodMessage = '✅';
+  let secret;
 
-    const {styleable} = getContext("sdk")
-    const component = getContext("component")
-    const formContext = getContext("form");
-    const formStepContext = getContext("form-step");
+  const formApi = formContext?.formApi;
+  $: formStep = $formStepContext ?? 1;
+  $: formField = formApi?.registerField(
+    field,
+    'text',
+    '',
+    false,
+    null,
+    formStep
+  );
 
-    const formApi = formContext?.formApi;
-    $: formStep = formStepContext ? $formStepContext ?? 1 : 1;
-    $: formField = formApi?.registerField(field, "text", "", false, null, formStep);
+  let fieldApi;
 
-    let fieldApi;
-    let fieldState;
+  $: unsubscribe = formField?.subscribe(value => {
+    fieldApi = value?.fieldApi;
+  });
 
-    $: unsubscribe = formField?.subscribe((value) => {
-        fieldState = value?.fieldState;
-        fieldApi = value?.fieldApi;
-    });
+  $: fieldApi?.setValue(secret);
 
-    onDestroy(() => {
-        fieldApi?.deregister();
-        unsubscribe?.();
-    });
-
-    $: {
-        fieldApi?.setValue(secret);
-    }
+  onDestroy(() => {
+    fieldApi?.deregister();
+    unsubscribe?.();
+  });
 </script>
 
 <div use:styleable={$component.styles}>
   <FancyPassword
-      bind:secret={secret}
-      {thiccness}
-      {greenThreshold}
-      {max}
-      {poorMessage}
-      {goodMessage}
-  />
+    bind:secret
+    {label}
+    {greenThreshold}
+    {max}
+    {poorMessage}
+    {goodMessage} />
 </div>
+
+<style>
+  :root {
+    --grey-3: #eeeeee;
+    --grey-4: #e0e0e0;
+    --grey-7: #757575;
+
+    --red: #e26d69;
+
+    --green: #84c991;
+
+    --border-grey: 1px var(--grey-4) solid;
+    --border-blue: 2px var(--blue) solid;
+  }
+</style>
