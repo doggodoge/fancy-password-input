@@ -9,6 +9,7 @@ describe.each`
   ${1000} | ${1}  | ${200} | ${200}
   ${15}   | ${15} | ${20}  | ${15}
   ${15}   | ${15} | ${15}  | ${15}
+  ${20}   | ${15} | ${20}  | ${20}
 `('clamp($input, $lower, $upper)', ({ input, lower, upper, expected }) => {
   test(`get ${expected} from input ${input}, lower bound ${lower}, and upper bound ${upper}`, () => {
     expect(clamp(input, lower, upper)).toBe(expected);
