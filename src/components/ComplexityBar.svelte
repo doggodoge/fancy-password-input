@@ -5,16 +5,9 @@
   export let greenThreshold = 15;
   export let max = 30;
   export let thiccness = 5;
-  let color;
-  let width;
 
-  $: {
-    color = 'var(--red)';
-    if (secret.length > greenThreshold) {
-      color = 'var(--green)';
-    }
-    width = `${(clamp(secret.length, 0, max) / max) * 100}%`;
-  }
+  $: color = secret.length > greenThreshold ? 'var(--green)' : 'var(--red)';
+  $: width = `${(clamp(secret.length, 0, max) / max) * 100}%`;
 </script>
 
 <div
