@@ -1,5 +1,8 @@
 # Fancy Password Input 🛂
 
+[![Release](https://github.com/doggodoge/fancy-password-input/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/doggodoge/fancy-password-input/actions/workflows/release.yml)
+[![codecov](https://codecov.io/gh/doggodoge/fancy-password-input/branch/main/graph/badge.svg?token=PQ97066X4F)](https://codecov.io/gh/doggodoge/fancy-password-input)
+
 ![fancy-password](https://user-images.githubusercontent.com/8438991/193717758-fd590d3b-bbb1-4e51-99a5-339e989fc164.gif)
 
 This budibase widget adds a new fancy password input with a wee progress bar thing
