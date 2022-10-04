@@ -1,6 +1,6 @@
 {
   "name": "fancy-password-input",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A kinda cool fancy password input",
   "license": "MIT",
   "svelte": "index.js",
