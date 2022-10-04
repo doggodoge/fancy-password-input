@@ -26,7 +26,7 @@
   <ComplexityBar {secret} {greenThreshold} {max} thiccness={5} />
 
   <div class="error-message">
-    {#if secret === ''}
+    {#if !secret}
       <div />
     {:else if secret.length > greenThreshold}
       <span style="color: var(--green);">{goodMessage}</span>
