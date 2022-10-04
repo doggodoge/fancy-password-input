@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { render, userEvent, screen } from '@testing-library/svelte';
+import { render, screen } from '@testing-library/svelte';
 
 import ComplexityBar from '../ComplexityBar.svelte';
 

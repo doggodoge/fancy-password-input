@@ -11,13 +11,14 @@
   $: notEmpty = secret.length > 0;
 </script>
 
-<div class="container">
+<div class="container" data-testid="fancy-password">
   <div class="input-container">
     {#if label}
-      <div class="label">{label}</div>
+      <div id="label" class="label">{label}</div>
     {/if}
     <input
       type="password"
+      aria-labelledby="label"
       class="password-input {notEmpty && 'password-input-not-empty'}"
       bind:value={secret} />
   </div>
