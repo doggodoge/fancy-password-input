@@ -19,7 +19,8 @@
 
 <div
   class="container"
-  style="background-color: {color}; height: {thiccness}px; width: {width};" />
+  style="background-color: {color}; height: {thiccness}px; width: {width};"
+  data-testid="complexity-bar" />
 
 <style>
   .container {
