@@ -16,6 +16,7 @@ jobs:
 
       - name: Run tests
         run: |
+          npm install -g pnpm
           pnpm install
           pnpm run test
 
