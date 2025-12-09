@@ -1,4 +1,6 @@
-# Fancy Password Input 🛂
+Archived on GitHub and moved to https://git.sr.ht/~gary_moore/fancy-password-input
+
+    # Fancy Password Input 🛂
 
 [![Release](https://github.com/doggodoge/fancy-password-input/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/doggodoge/fancy-password-input/actions/workflows/release.yml)
 [![codecov](https://codecov.io/gh/doggodoge/fancy-password-input/branch/main/graph/badge.svg?token=PQ97066X4F)](https://codecov.io/gh/doggodoge/fancy-password-input)
